@@ -44,7 +44,6 @@ function createGrid(numberOfDivs) {
 }
 
 function randomizeColors() {
-    console.log("Calling randomizecolors");
     const r = Math.floor(Math.random() * 257) - 1;
     const g = Math.floor(Math.random() * 257) - 1;
     const b = Math.floor(Math.random() * 257) - 1;
@@ -52,13 +51,9 @@ function randomizeColors() {
 }
 
 function addBlack(square) {
-    console.log("Calling addblack");
     const color = square.style.backgroundColor;
-    console.log(color);
     let rgb = color.substring(color.indexOf("(") + 1, color.length - 1).split(", ");
-    console.log(rgb);
     if(rgb[0] == 0 && rgb[1] == 0 && rgb[2] == 0){
-        console.log("rgb is 0,0,0");
         const newColors = randomizeColors();
         square.style.backgroundColor = `rgb(${newColors[0]}, ${newColors[1]}, ${newColors[2]})`;
         return;
